@@ -1,0 +1,45 @@
+.H2{
+    margin-bottom: 5vh;
+}
+
+.b{
+    padding: 5vw;
+    background-color: black;
+    color: white;
+}
+
+.abbh{
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+
+}
+
+.c{
+    padding-top: 5vw;
+}
+
+
+
+@media screen and (min-width: 760px) {
+    .H1 {
+        width: 35vw;
+        background-color: black;
+    }
+
+    .H2{
+        width: 40vw;
+        background-color: black;
+        padding: 5vw;
+    }
+    
+    .LNP{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    }
+  }
+
+

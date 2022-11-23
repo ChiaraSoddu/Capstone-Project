@@ -1,0 +1,55 @@
+.foot{
+    padding: 10vw;
+    color: white;
+    background-color: black;
+}
+
+.tc{
+    margin-bottom: 5vh;
+
+}
+
+.hrf{
+    border: 1px white solid;
+}
+
+.F2{
+    margin-bottom: 5vh;
+}
+
+.af{
+    color: orange;
+}
+
+.af:hover{
+    color: orange;
+    text-decoration: none;
+}
+
+.Copyright{
+    margin-top: 5vh;
+}
+
+
+@media screen and (min-width: 760px) {
+    .F1, .F2, .F3 {width: 30vw}
+    .FirstPartF{
+    display: flex;
+    flex-flow: row wrap;
+    }
+    .F2{
+        margin-left: 10vw;
+        text-align: start;
+    }
+  }
+
+  @media screen and (min-width: 1000px){
+    .F1, .F2, .F3 {width: 30vw}
+    .FirstPartF{
+    display: flex;
+    flex-flow: row nowrap
+    }
+    
+  }
+
+
