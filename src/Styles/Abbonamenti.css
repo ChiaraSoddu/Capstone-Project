@@ -1,0 +1,37 @@
+.sa{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+    background-color: black;
+}
+
+.carda {
+    width: 80vw;
+    margin-bottom: 2vh;
+}
+
+.btnA{
+    background-color: orange;
+}
+
+@media screen and (min-width: 600px) {
+    
+    .carda {
+        width: 30rem;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .sa{
+        display: flex;
+        flex-flow: row nowrap;
+        padding-top: 15vh;
+    }
+
+    .carda {
+        width: 16rem;
+        margin: 10px;
+    }
+  }

@@ -8,7 +8,7 @@ const MyNav = () => {
   <section>
     <Navbar  className='fixed-top'  expand='lg' bg='black' variant='dark '>
         <Container collapseOnSelect >
-        <Navbar.Brand  className='mt-0' href="/">ICONA PALESTRA</Navbar.Brand>
+        <Navbar.Brand  className='mt-0' href="/">GYM-APP</Navbar.Brand>
         <Navbar.Toggle className="ms-auto" aria-controls="responsive-navbar-nav " />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className='me-auto' >

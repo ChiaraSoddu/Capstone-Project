@@ -9,6 +9,7 @@ import MyHome from './components/MyHome';
 import Alimentazione from './components/Alimentazione';
 import Pt from './components/Pt';
 import Subscription from './components/Subscription';
+import Abbonamenti from './components/Abbonamenti';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<MyHome />} />
         <Route path="/ali" element={<Alimentazione/>} />
         <Route path="/pt" element={<Pt/>} />
+        <Route path="/abbonamenti" element={<Abbonamenti/>} />
         
         </Routes>
       </BrowserRouter>
