@@ -1,0 +1,30 @@
+.sub{
+    background-color:orange;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fm{
+    margin-bottom: 0.5rem;
+    width: 30vw;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btnf{
+    margin-bottom: 1rem;
+    border: none;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}

@@ -1,5 +1,17 @@
+#lnp{
+    margin-bottom: 5vh;
+}
+
 .H2{
     margin-bottom: 5vh;
+}
+
+.wh{
+    font-size: 2rem;
+    padding: 5vh
+}
+.big{
+    font-weight: bold;
 }
 
 .b{
@@ -7,6 +19,7 @@
     background-color: black;
     color: white;
 }
+
 
 .abbh{
     background-color: orange;
@@ -17,15 +30,19 @@
 
 }
 
-.c{
-    padding-top: 5vw;
+.c .LNP{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 5vw;
+    margin-top: 5vw;
+    background-color: black;
 }
 
 
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 785px) {
     .H1 {
-        width: 35vw;
+        width: 30vw;
         background-color: black;
     }
 
@@ -39,6 +56,10 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    }
+
+    .b{
+        padding: 7vw
     }
   }
 

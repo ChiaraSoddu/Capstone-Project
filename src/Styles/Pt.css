@@ -1,0 +1,23 @@
+.pti{
+    margin-left: 5vw;
+    width: 15vw;
+    height: 15vw;
+    margin-bottom: 10px;
+}
+
+.cardp{
+    margin: 2vh;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 60vw;
+    height: 20vw;
+}
+
+.pts{
+    margin-top: 10vh;
+    display: flex;
+    flex-flow: column ;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+}
