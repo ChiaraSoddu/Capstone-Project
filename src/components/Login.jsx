@@ -13,24 +13,35 @@ const Login = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
-   /*  const handleSubmit = (e) => {
-       console.log('users to login:', users)
+     const handleSubmit = (e) => {
+      
             e.preventDefault();
-            setLoggedUser(users.filter(u => u.email === email && u.pass === pass)[0]);
             
-            console.log('logged in:',loggedUser);        
-    }
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: email, password: pass})
+            }
 
+            fetch("http://localhost:8080/auth/login", options)
+            .then(res => res.json())
+            .then(res => console.log(res))
+    }
+/*
     if (loggedUser) {
         dispatch(loginAction(loggedUser));
         navigate(`/user/${loggedUser._id}`);
     } */
 
+
+
     return(
         <div className='auth-form-container'>
-            <form className='form'>
+            <form className='form' onSubmit={(e) => handleSubmit(e)}>
                 <label className='fm' htmlFor="email">EMAIL</label>
-                <input className='fm' value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name='email'/> 
+                <input className='fm' value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="youremail@gmail.com" id="email" name='email'/> 
                 <label className='fm' htmlFor="password">PASSWORD</label>
                 <input className='fm' value={pass } onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name='password'/> 
                 <button className='btnf'>LOG IN</button>

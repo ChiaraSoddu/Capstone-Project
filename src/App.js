@@ -10,6 +10,7 @@ import Alimentazione from './components/Alimentazione';
 import Pt from './components/Pt';
 import Subscription from './components/Subscription';
 import Abbonamenti from './components/Abbonamenti';
+import Profile from './components/Profile';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/ali" element={<Alimentazione/>} />
         <Route path="/pt" element={<Pt/>} />
         <Route path="/abbonamenti" element={<Abbonamenti/>} />
+        <Route path="/profile" element={<Profile/>} />
         
         </Routes>
       </BrowserRouter>
