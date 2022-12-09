@@ -1,4 +1,4 @@
-
+import React from 'react';
 import {Card, Image} from 'react-bootstrap';
 import '../Styles/Pt.css';
 import pt1 from '../img/pt1.webp';

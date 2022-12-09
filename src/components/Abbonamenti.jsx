@@ -1,4 +1,4 @@
-
+import React from 'react';
 import '../Styles/Abbonamenti.css'
 
 const Abbonamenti =()=> {

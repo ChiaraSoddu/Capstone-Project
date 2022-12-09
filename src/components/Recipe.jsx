@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import '../Styles/Alimentazione.css'

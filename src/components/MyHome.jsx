@@ -1,3 +1,4 @@
+import React from 'react';
 import '../Styles/MyHome.css'
 
 import Videopalestra from "../video/videopalestra.mp4"

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const SignUp = (props) => {
@@ -9,9 +10,21 @@ const SignUp = (props) => {
     const [username, setUsername] = useState('');
 
     const handleSubmit = (e) => {
+      
         e.preventDefault();
-        console.log(email);
-    }
+        
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username: username, password: pass, email: email, name: name, lastname: lastname})
+        }
+
+        fetch("http://localhost:8080/users", options)
+        .then(res => res.json())
+        .then(res => console.log(res))
+}
 
 
     return(
