@@ -9,7 +9,6 @@ import loggedUserReducer from "../reducers/loggedUserReducer";
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ['users', 'experiences'],
   transforms: [
     encryptTransform({
       secretKey: "P455W0RD", //process.env.REACT_APP_PERSIST_KEY,
@@ -18,9 +17,7 @@ const persistConfig = {
 };
 
 const generalReducer = combineReducers({
-  loggedUser: loggedUserReducer,
-  users: usersReducer,
-  experiences: experiencesReducer,
+  loggedUser: loggedUserReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, generalReducer);

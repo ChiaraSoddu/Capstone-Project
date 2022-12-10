@@ -9,18 +9,6 @@ export const getUsersAction = (users) => ({
     payload: users
 })
 
-export const getExperiencesAction = (exp) => ({
-  type: GET_EXPERIENCES,
-  payload: exp
-})
-
-
-export const newExperienceAction = (exp) => ({
-  type: NEW_EXPERIENCE,
-  payload: exp
-})
-
-
 export const loginAction = (user) => ({
   type: LOGIN,
   payload: user

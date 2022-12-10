@@ -16,12 +16,13 @@ const SignUp = (props) => {
         const options = {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: JSON.stringify({username: username, password: pass, email: email, name: name, lastname: lastname})
+            
         }
 
-        fetch("http://localhost:8080/users", options)
+        fetch(`http://localhost:8080/users/?name=${name}&lastname=${lastname}&username=${username}&email=${email}&password=${pass}`, options)
         .then(res => res.json())
         .then(res => console.log(res))
 }
