@@ -25,7 +25,7 @@ function App() {
         <Route path="/ali" element={<Alimentazione/>} />
         <Route path="/pt" element={<Pt/>} />
         <Route path="/abbonamenti" element={<Abbonamenti/>} />
-        <Route path="/user/:id" element={<Profile/>} />
+        <Route path="/profile" element={<Profile/>} />
         
         </Routes>
       </BrowserRouter>
