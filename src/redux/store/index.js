@@ -11,7 +11,7 @@ const persistConfig = {
   blacklist: 'users',
   transforms: [
     encryptTransform({
-      secretKey: "P455W0RD", //process.env.REACT_APP_PERSIST_KEY,
+      secretKey: "P455W0RD", 
     }),
   ],
 };
