@@ -34,7 +34,7 @@ const Login = (props) => {
 
             console.log('users to login:', users)
             e.preventDefault();
-            setLoggedUser(users.filter(u => u.email === email)[0]);
+            /*setLoggedUser(users.filter(u => u.email === email)[0]);*/
             
             console.log('logged in:',loggedUser);  
         }
@@ -51,8 +51,8 @@ const Login = (props) => {
     return(
         <div className='auth-form-container'>
             <form className='form' onSubmit={(e) => handleSubmit(e)}>
-                <label className='fm' htmlFor="email">EMAIL</label>
-                <input className='fm' value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="youremail@gmail.com" id="email" name='email'/> 
+                <label className='fm' htmlFor="email">USERNAME</label>
+                <input className='fm' value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Marco" id="email" name='email'/> 
                 <label className='fm' htmlFor="password">PASSWORD</label>
                 <input className='fm' value={pass } onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name='password'/> 
                 <button className='btnf'>LOG IN</button>
