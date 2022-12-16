@@ -4,8 +4,12 @@ import Card from 'react-bootstrap/Card';
 import '../Styles/Abbonamenti.css'
 import p1 from '../img/manubri.jpg'
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 const CardAbb = (props) => {
+
+    const [owner_id, setOwner_id] = useState();
+    const [type, setType] = useState();
 
     const loggedUser = useSelector((state) => state.loggedUser)
 
@@ -15,11 +19,12 @@ const CardAbb = (props) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFjYW1wIiwiaWF0I…Q9gx9kyBYtBFnN6QDC-ooj1k87Epy-E45ntAq6_kUj6N387yA' 
-            },
-            body: JSON.stringify({type: props.type, owner_id: loggedUser.getUserId()})
+            }
         }
 
-        fetch("https://localhost:8080/subscription/")
+        fetch(`http://localhost:8080/subscription/?owner_id=${owner_id}&type=${type}`, options)
+        .then(res => res.json())
+        .then(res => console.log(res))
     }
 
 

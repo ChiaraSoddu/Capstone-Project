@@ -7,12 +7,13 @@ import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
 
-    /*const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const users = useSelector(state => state.users.fetchedUsers[0]);
-    const [loggedUser, setLoggedUser] = useState(null); */
+    
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [loggedUser, setLoggedUser] = useState(null);
+    const users = useSelector(state => state.users.fetchedUsers[0]);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
      const handleSubmit = (e) => {
       
@@ -29,12 +30,21 @@ const Login = (props) => {
             fetch("http://localhost:8080/auth/login", options)
             .then(res => res.json())
             .then(res => console.log(res))
-    }
-/*
+
+
+            console.log('users to login:', users)
+            e.preventDefault();
+            setLoggedUser(users.filter(u => u.email === email)[0]);
+            
+            console.log('logged in:',loggedUser);  
+        }
+
+    
+
     if (loggedUser) {
         dispatch(loginAction(loggedUser));
         navigate(`/user/${loggedUser._id}`);
-    } */
+    } 
 
 
 
