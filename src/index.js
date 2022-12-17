@@ -4,18 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { Provider } from 'react-redux';
+import { persistor, store } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Auth0Provider
-    domain='dev-b5oulz6yfqotirxb.us.auth0.com'
-    clientId='HuvX88lwuldyhwSy9i5uXRwIGW4ALWTZ'
-    redirectUri={window.location.origin}
-  >
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </Auth0Provider>
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

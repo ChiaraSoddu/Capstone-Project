@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -11,6 +11,8 @@ import Pt from './components/Pt';
 import Subscription from './components/Subscription';
 import Abbonamenti from './components/Abbonamenti';
 import Profile from './components/Profile';
+import { useDispatch } from 'react-redux';
+import { getUsersAction } from './redux/actions';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,12 +22,12 @@ function App() {
   }, []);
 
   const getUsers = () => {
-    fetch("https://striveschool-api.herokuapp.com/api/profile/", {
+    fetch("http://localhost:8080/users/", {
       method: "GET",
       headers: {
         Accept: "application/json",
         Authorization:
-          "Bearer ",
+          "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFjYW1wIiwiaWF0I…Q9gx9kyBYtBFnN6QDC-ooj1k87Epy-E45ntAq6_kUj6N387yA",
       },
     })
       .then((res) => res.json())

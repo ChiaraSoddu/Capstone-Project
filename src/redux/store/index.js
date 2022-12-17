@@ -1,6 +1,4 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import usersReducer from "../reducers/usersReducer";
-import experiencesReducer from "../reducers/experiencesReducer";
 import { encryptTransform } from "redux-persist-transform-encrypt";
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
