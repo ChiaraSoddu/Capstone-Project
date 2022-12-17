@@ -13,7 +13,28 @@ import Abbonamenti from './components/Abbonamenti';
 import Profile from './components/Profile';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getUsers();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  const getUsers = () => {
+    fetch("https://striveschool-api.herokuapp.com/api/profile/", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        Authorization:
+          "Bearer ",
+      },
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        //console.log('users: ',res);
+        dispatch(getUsersAction(res));
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="App">
