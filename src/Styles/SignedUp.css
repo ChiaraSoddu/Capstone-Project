@@ -1,0 +1,17 @@
+.SUpage{
+    margin-top: 5vh;
+    height: 80vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(27, 27, 27);
+    color: white;
+}
+
+.btnsu{
+    border: none;
+    text-decoration: underline orange;
+    color: orange;
+    background-color: rgb(27, 27, 27);
+}

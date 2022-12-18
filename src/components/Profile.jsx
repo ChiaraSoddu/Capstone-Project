@@ -2,10 +2,15 @@ import React from 'react';
 import '../Styles/Profile.css'
 import p from '../img/profilep.png'
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useState } from 'react';
+import { logoutAction } from '../redux/actions';
 
-const Profile = () => {
+const Profile = (props) => {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
   /*  const params = useParams();
     const dispatch = useDispatch();
@@ -17,7 +22,25 @@ const Profile = () => {
     const experiences = useSelector(state => state.experiences.fetchedUserExperiences);
 
     */
+    const [email, setEmail] = useState('')
+    const loggedUser = useSelector(state => state.loggedUser.state.username);
+    const token = useSelector(state => state.loggedUser.state.token);
+  
+        const getUser= () => {
+            fetch(`http://localhost:8080/users/get/${loggedUser}`, { headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' +{token}}})
+            .then(res => res.json())
+            .then(res => {console.log(res); setEmail(res.email)});
+        }
 
+    useEffect(() => {  
+      getUser();
+  
+    }, [])
+
+    const logout = () => {
+        dispatch(logoutAction())
+      };
+    
 
     return(
     
@@ -31,13 +54,13 @@ const Profile = () => {
                        src={p}
                        alt="fotoprfl" 
                        /> 
-                       <input type="file" id='fileInput' style={{display:"none"}} />
                     </div>
-                    <label>Nome utente</label>
-                    <input type="text" placeholder="Jim" className='inpp'/>
-                    <label>Email</label>
-                    <input type="email" placeholder="jim@gmail.com" className='inpp'/>
+                    <label>{loggedUser}</label>
+                    <label>{email}</label>
+                    
                 </form>
+
+                <button onClick={()=> {logout(); navigate('/')}}>LogOut</button>
             </div>
         </div>
     )

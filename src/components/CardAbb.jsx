@@ -7,31 +7,40 @@ import { useSelector } from 'react-redux';
 
 const CardAbb = (props) => {
 
-    const loggedUser = useSelector((state) => state.loggedUser)
+    const loggedUser = useSelector(state => state.loggedUser.state.id);
+    const token = useSelector(state => state.loggedUser.state.token);
+    
+  
+    function subscribe(){
+      const options = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'Bearer ' + token 
+          }
+      }
+      fetch(`http://localhost:8080/subscription/?owner_id=${loggedUser}&type=${props.type}`, options)
+      .then(res => res.json())
+      .then(res => console.log(res))
+  }
+  
+  
+  
 
-    function Subscribe(){
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJmcmFjYW1wIiwiaWF0I…Q9gx9kyBYtBFnN6QDC-ooj1k87Epy-E45ntAq6_kUj6N387yA' 
-            },
-            body: JSON.stringify({type: props.type, owner_id: loggedUser.getUserId()})
-        }
+    
 
-        fetch("https://localhost:8080/subscription/")
-    }
-
+  
 
     return(
         <Card className='carda'>
             <Card.Img variant="top" src={p1} />
             <Card.Body>
-                <Card.Title>{props.name}</Card.Title>
+                <Card.Title>{props.type}</Card.Title>
                 <Card.Text>
-                {props.text}
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero eaque ea repellendus praesentium, maxime dolore error quaerat consequatur fugiat numquam fugit sapiente amet consequuntur obcaecati. Illo non iste facere atque.
                 </Card.Text>
-                <Button className='btnA'>Abbonati</Button>
+                <Button className='btnA' onClick={()=> subscribe()}>Abbonati</Button>
             </Card.Body>
         </Card>
     )

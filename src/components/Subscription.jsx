@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import '../Styles/Subscription.css';
 import SignUp from './SignUp';
 import Login from './Login';
+import { useEffect } from 'react';
 
 const Subscription = () => {
+
+    
+    
 
     const [currentForm, setCurrentForm] = useState('login');
 

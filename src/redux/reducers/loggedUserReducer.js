@@ -2,7 +2,8 @@ import { LOGIN, LOGOUT } from "../actions";
 
 const initialState = {
   username: null,
-  token: null
+  token: null,
+  id:null
 }
 
 const loggedUserReducer = (state = initialState, action) => {
@@ -15,7 +16,7 @@ const loggedUserReducer = (state = initialState, action) => {
     case LOGOUT:
       return {
         ...state,
-        loggedUser: action.payload
+        state: action.payload
       }
     default:
       return state;

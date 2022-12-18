@@ -1,7 +1,13 @@
 
 import React, { useState } from 'react';
+import { loginAction } from '../redux/actions';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = (props) => {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -21,12 +27,18 @@ const SignUp = (props) => {
             },
             
         }
+        
 
         fetch(`http://localhost:8080/users/?name=${name}&lastname=${lastname}&username=${username}&email=${email}&password=${pass}`, options)
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => {console.log(res); navigate('/signedup')})
+        
+        
 }
 
+
+      
+    
 
     return(
         <div className='auth-form-container'>
@@ -40,7 +52,7 @@ const SignUp = (props) => {
             <label className='fm' htmlFor="username">USERNAME</label>
             <input className='fm' value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username" id="username" name='username'/>
             <label className='fm' htmlFor="password">PASSWORD</label>
-            <input className='fm' value={pass } onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name='password'/>
+            <input className='fm' value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="*******" id="password" name='password'/>
             <button className='btnf'>SIGN UP</button>
         </form>
         <button className='btnf' onClick={() => props.onFormSwitch('login')}>Hai già un account? Vai alla pagina di Login</button>
