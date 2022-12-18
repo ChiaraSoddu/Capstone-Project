@@ -29,6 +29,7 @@ const Alimentazione = () => {
             value={food}
             onChange= {e => setFood(e.target.value)}
             placeholder='search food'
+            className='searchinput'
              />  
              <button onClick={searchFood}>Cerca</button> 
        </div>
@@ -66,13 +67,14 @@ const Alimentazione = () => {
         </tr>
       </tbody>
     </Table>
+    <Recipe/>
     </section>
 
 
     <div>
       
 
-      <Recipe/>
+      
 
     </div>
     </>

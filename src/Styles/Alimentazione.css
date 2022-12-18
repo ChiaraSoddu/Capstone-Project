@@ -1,7 +1,22 @@
 .PageW{
-    height: 80vh;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    color: white;
+    background:   linear-gradient( orange, rgb(27, 27, 27));
+    padding-top: 25vh;
+}
+
+
+
+.cardrec{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.recipep{
+    display: flex;
+    flex-flow: column wrap;
 }

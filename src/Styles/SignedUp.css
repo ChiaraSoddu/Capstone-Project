@@ -14,4 +14,5 @@
     text-decoration: underline orange;
     color: orange;
     background-color: rgb(27, 27, 27);
+    cursor: pointer;
 }

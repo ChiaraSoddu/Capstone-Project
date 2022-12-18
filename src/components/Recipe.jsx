@@ -20,7 +20,8 @@ const Recipe = () => {
     }
 
     return(
-    <><h3>Recipe example</h3>
+    <section className='recipep'>
+    <h3>Recipe example</h3>
     <div  style={{ height:'15vh'}}>
         <div className="search">
             <input type="text"
@@ -36,7 +37,7 @@ const Recipe = () => {
     
     <div>
         
-    <Card >
+    <Card className='cardrec'>
       <Card.Body>
         {data[0] ?
         <Card.Title>{data[0].title}</Card.Title> : null }
@@ -49,7 +50,7 @@ const Recipe = () => {
       </Card.Body>
     </Card></div>
 
-    </>
+    </section>
     )
 }
 

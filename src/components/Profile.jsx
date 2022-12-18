@@ -47,20 +47,17 @@ const Profile = (props) => {
         <div className='profile'>
             <div className='profileWrapper'>
                 
-                <form className="profileForm">
-                    <label>Immagine Profilo</label>
-                    <div className='profilePP'>
-                       <img 
-                       src={p}
-                       alt="fotoprfl" 
-                       /> 
-                    </div>
-                    <label>{loggedUser}</label>
-                    <label>{email}</label>
+                
                     
-                </form>
+                    
+                <h3 className='useprofile'>Username:</h3>
+                <p className='useprofile'>{loggedUser}</p>
+                <h3 className='useprofile'>Email:</h3>
+                <p className='useprofile'>{email}</p>
+                    
+                
 
-                <button onClick={()=> {logout(); navigate('/')}}>LogOut</button>
+                <button className='btnprof' onClick={()=> {logout(); navigate('/')}}>LogOut</button>
             </div>
         </div>
     )
