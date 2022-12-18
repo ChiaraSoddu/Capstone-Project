@@ -25,6 +25,9 @@ const Profile = (props) => {
     const [email, setEmail] = useState('')
     const loggedUser = useSelector(state => state.loggedUser.state.username);
     const token = useSelector(state => state.loggedUser.state.token);
+
+    const subty = useSelector(state => state.sub.state.subtype);
+    const expi = useSelector(state => state.sub.state.exp);
   
         const getUser= () => {
             fetch(`http://localhost:8080/users/get/${loggedUser}`, { headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' +{token}}})
@@ -53,7 +56,11 @@ const Profile = (props) => {
                 <h3 className='useprofile'>Username:</h3>
                 <p className='useprofile'>{loggedUser}</p>
                 <h3 className='useprofile'>Email:</h3>
-                <p className='useprofile'>{email}</p>
+                <p className='useprofile'>{email}</p> 
+                <h3 className='useprofile'>Abbonamento attivo:</h3>
+                <p className='useprofile'>{subty}</p>
+                <h3 className='useprofile'>Scadenza:</h3>
+                <p className='useprofile'>{expi}</p>
                     
                 
 

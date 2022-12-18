@@ -1,7 +1,6 @@
 .profile {
+    padding:10vh;
     display: flex;
-    height: 80vh;
-    margin-top: 4rem;
     justify-content: center;
     align-items: center;
     background:   linear-gradient( orange, rgb(27, 27, 27));
@@ -13,7 +12,7 @@
     padding: 20px;
     border: solid 2px white;
     border-radius: 20px;
-    width: 20vw;
+    width: 20rem;
 }
 
 .profileTitle {

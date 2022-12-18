@@ -3,15 +3,17 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import '../Styles/Abbonamenti.css'
 import p1 from '../img/manubri.jpg'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { subAction } from '../redux/actions';
 
 const CardAbb = (props) => {
-
+    const dispatch = useDispatch();
     const loggedUser = useSelector(state => state.loggedUser.state.id);
     const token = useSelector(state => state.loggedUser.state.token);
     
   
     function subscribe(){
+
       const options = {
           method: 'POST',
           headers: {
@@ -22,7 +24,7 @@ const CardAbb = (props) => {
       }
       fetch(`http://localhost:8080/subscription/?owner_id=${loggedUser}&type=${props.type}`, options)
       .then(res => res.json())
-      .then(res => console.log(res))
+      .then(res => {console.log(res); dispatch(subAction({subtype: res.subtype, exp: res.exp, start: res.start}))})
   }
   
   
