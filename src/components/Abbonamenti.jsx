@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/Abbonamenti.css'
 import CardAbb from './CardAbb';
-import { useSelector } from 'react-redux';
 
 const Abbonamenti =()=> {
 

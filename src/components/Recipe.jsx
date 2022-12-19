@@ -28,8 +28,9 @@ const Recipe = () => {
             value={food}
             onChange= {e => setFood(e.target.value)}
             placeholder='search food'
+            className='searchinput'
              />  
-             <button onClick={searchFood}>Cerca</button> 
+             <button className='searchinput' onClick={searchFood}>Cerca</button> 
        </div>
        </div>
      

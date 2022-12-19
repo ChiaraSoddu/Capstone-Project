@@ -1,7 +1,7 @@
 .sub{
-    background-color:orange;
+    background:   linear-gradient( orange, rgb(27, 27, 27));
     padding-top: 7rem;
-
+    color: white;
 }
 
 .form{
@@ -21,11 +21,17 @@
     font-weight: bold;
 }
 
+.fmi{
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;}
+
 .btnf{
     margin-bottom: 1rem;
     border: none;
-    background-color: orange;
-    color: white;
+    background-color: transparent;
+    color: orange;
+    text-decoration: underline orange;
     font-weight: bold;
     text-decoration: underline;
 }

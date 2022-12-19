@@ -20,7 +20,7 @@ const MyNav = () => {
             
               
 
-              {!loggedUser ? (<Nav.Link className='aN' href="/subscription">ISCRIVITI</Nav.Link>) : (<>
+              {!loggedUser ? (<Nav.Link className='aN' href="/subscription">ACCEDI</Nav.Link>) : (<>
               <Nav.Link className='aN' href="/profile"><CgProfile style={{width: '5rem', color: 'orange'}}/></Nav.Link>
               <Nav.Link className='aN' href="/abbonamenti">ABBONAMENTI</Nav.Link>
               <Nav.Link className='aN' href="/ali">ALIMENTAZIONE</Nav.Link>

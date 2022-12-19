@@ -3,11 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import '../Styles/Abbonamenti.css'
 import p1 from '../img/manubri.jpg'
-import { useDispatch, useSelector } from 'react-redux';
-import { subAction } from '../redux/actions';
+import { useSelector } from 'react-redux';
 
 const CardAbb = (props) => {
-    const dispatch = useDispatch();
     const loggedUser = useSelector(state => state.loggedUser.state.id);
     const token = useSelector(state => state.loggedUser.state.token);
     
@@ -24,7 +22,12 @@ const CardAbb = (props) => {
       }
       fetch(`http://localhost:8080/subscription/?owner_id=${loggedUser}&type=${props.type}`, options)
       .then(res => res.json())
-      .then(res => {console.log(res); dispatch(subAction({subtype: res.subtype, exp: res.exp, start: res.start}))})
+      .then(res => {console.log(res); return(
+        alert('CONGRATULAZIONI! IL TUO ABBONAMENTO PARTE DA OGGI, TI ASPETTIAMO IN PALESTRA')
+      )})
+      .catch(err => {return(
+        alert('Hai già un abbonamento attivo, vedi la scadenza sul tuo profilo')
+      )})
   }
   
   

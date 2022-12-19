@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -12,13 +12,8 @@ import Subscription from './components/Subscription';
 import Abbonamenti from './components/Abbonamenti';
 import Profile from './components/Profile';
 import SignedUp from './components/SignedUp';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUsersAction } from './redux/actions';
-import { useState } from 'react';
-import { setUseProxies } from 'immer';
 
 function App() {
-  const dispatch = useDispatch();
   
 
   return (

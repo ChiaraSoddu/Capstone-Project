@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+::-webkit-input-placeholder { /* WebKit browsers (Safari, Google Chrome, Opera 15+) */
+  color: rgba(255, 255, 255, 0.661);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color: rgba(255, 255, 255, 0.661);
+ opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color: rgba(255, 255, 255, 0.661);
+ opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+ color:rgba(255, 255, 255, 0.661);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

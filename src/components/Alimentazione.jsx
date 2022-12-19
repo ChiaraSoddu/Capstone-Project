@@ -31,7 +31,7 @@ const Alimentazione = () => {
             placeholder='search food'
             className='searchinput'
              />  
-             <button onClick={searchFood}>Cerca</button> 
+             <button className='searchinput' onClick={searchFood}>Cerca</button> 
        </div>
        </div>
      

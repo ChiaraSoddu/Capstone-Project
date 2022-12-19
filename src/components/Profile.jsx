@@ -1,42 +1,42 @@
 import React from 'react';
 import '../Styles/Profile.css'
-import p from '../img/profilep.png'
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from 'react';
 import { logoutAction } from '../redux/actions';
 
-const Profile = (props) => {
+const Profile = () => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-  /*  const params = useParams();
-    const dispatch = useDispatch();
-    const user = useSelector(
-        (state) =>
-        state.users.fetchedUsers[0]?.filter((el) => el._id === params.id)[0]
-    );
-
-    const experiences = useSelector(state => state.experiences.fetchedUserExperiences);
-
-    */
+  
     const [email, setEmail] = useState('')
     const loggedUser = useSelector(state => state.loggedUser.state.username);
     const token = useSelector(state => state.loggedUser.state.token);
 
-    const subty = useSelector(state => state.sub.state.subtype);
-    const expi = useSelector(state => state.sub.state.exp);
+   const [subtype, setSubtype] =useState('')
+   const [exp, setExp] = useState('')
   
         const getUser= () => {
             fetch(`http://localhost:8080/users/get/${loggedUser}`, { headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' +{token}}})
             .then(res => res.json())
-            .then(res => {console.log(res); setEmail(res.email)});
+            .then(res => {console.log('profilo:', res); setEmail(res.email)});
+        }
+
+        const getSub= () => {
+          fetch(`http://localhost:8080/subscription/get/${loggedUser}`, { headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' +{token}}})
+            .then(res => res.json())
+            .then(res => {console.log('profilo:', res); setExp(res.exp); setSubtype(res.subtype);})
+            .catch(err => {return(
+              alert('nessun abbonamento attivo')
+            )})
         }
 
     useEffect(() => {  
       getUser();
+      getSub();
   
     }, [])
 
@@ -57,10 +57,15 @@ const Profile = (props) => {
                 <p className='useprofile'>{loggedUser}</p>
                 <h3 className='useprofile'>Email:</h3>
                 <p className='useprofile'>{email}</p> 
+                
+                
+                {exp? <>
                 <h3 className='useprofile'>Abbonamento attivo:</h3>
-                <p className='useprofile'>{subty}</p>
+                <p className='useprofile'>{subtype}</p>
                 <h3 className='useprofile'>Scadenza:</h3>
-                <p className='useprofile'>{expi}</p>
+                <p className='useprofile'>{exp}</p>
+                </> : null}
+                
                     
                 
 
